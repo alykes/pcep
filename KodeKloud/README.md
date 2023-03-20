@@ -63,7 +63,7 @@ example:
 + -
 ```
 `print(10-6**2/9*10+1)`  
-`6 ** 2``36/9``4*10``10-30+1`  
+`6 ** 2` `36/9` `4*10` `10-30+1`  
 `-29`  
 Sub-expressions are calculated first  
 `print(2 * (5 - 2))`  
