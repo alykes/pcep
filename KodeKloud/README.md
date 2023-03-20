@@ -157,7 +157,7 @@ Summary:
 |Without Shortcut Operator|With Shortcut Operator|  
 |---|---|  
 |bit1 = bit1 & 22|bit1 &= 22|  
-|bit1 = bit1 | 22|bit1 \|= 22|  
+|bit1 = bit1 \| 22|bit1 \|= 22|  
 |bit1 = bit1 ^ 22|bit1 ^= 22|  
 
 #### Bit Shifting
