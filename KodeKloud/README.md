@@ -208,31 +208,31 @@ print(22 << 2) = print(22 * 4)
   ```
 
 #### List methods
-- some_list.append()  - Adds to the end of the list  
-- some_list.index(1) - Will return the value in element 1 of the array
-- some_list.insert()  - Inserts a value at the index specified `some_list.inset(2, 'Italy')`  
-- some_list.reverse() - Sorts the list elements in a reversed order, this modifies the original array  
-- some_list.sort() - Sorts the list elements, this modifies the original array  
-- some_list[0], some_list[1] = some_list[1], some_list[0] - This will swap elements in a list  
+- `some_list.append()`  - Adds to the end of the list  
+- `some_list.index(1)` - Will return the value in element 1 of the array
+- `some_list.insert()`  - Inserts a value at the index specified `some_list.inset(2, 'Italy')`  
+- `some_list.reverse()` - Sorts the list elements in a reversed order, this modifies the original array  
+- `some_list.sort()` - Sorts the list elements, this modifies the original array  
+- `some_list[0], some_list[1] = some_list[1], some_list[0]` - This will swap elements in a list  
 
 
 #### Slicing a list
-list1[start:stop]  # items start through stop-1  
-list1[start:]      # items start through the rest of the array   
-list1[:stop]       # items from the beginning through stop-1  
-list1[:]           # a copy of the whole array  
-list1[start:stop:step] # start through not past stop, by step  
+`list1[start:stop]`  # items start through stop-1  
+`list1[start:]`      # items start through the rest of the array   
+`list1[:stop]`       # items from the beginning through stop-1  
+`list1[:]`           # a copy of the whole array  
+`list1[start:stop:step]` # start through not past stop, by step  
 
-a[-1]    # last item in the array  
-a[-2:]   # last two items in the array  
-a[:-2]   # everything except the last two items  
+`a[-1]`    # last item in the array  
+`a[-2:]`   # last two items in the array  
+`a[:-2]`   # everything except the last two items  
 
 Similarly, step may be a negative number:  
 
-a[::-1]    # all items in the array, reversed  
-a[1::-1]   # the first two items, reversed  
-a[:-3:-1]  # the last two items, reversed  
-a[-3::-1]  # everything except the last two items, reversed  
+`a[::-1]`    # all items in the array, reversed  
+`a[1::-1]`   # the first two items, reversed  
+`a[:-3:-1]`  # the last two items, reversed  
+`a[-3::-1]`  # everything except the last two items, reversed  
 
 
 Practical example:  
