@@ -334,5 +334,21 @@ usernames = {
   Sarah - bubbles
   ```
 - .values()  
-  
+  This will return a list of values  
+  `dict_values(['ango_user', 'ninja', 'bubbles'])`  
+  This is the best approach to iterate over the values
 - .items()  
+  This will return the items as a tuple as a key/value pair  
+  `dict_items([('ango', 'ango_user'), ('Joe', 'ninja'), ('Sarah', 'bubbles')])`  
+- Modifying a single dictionary value  
+  to update a value, you can need to reference the key as follows: `usernames["ango"] = "ango_admin"`  
+- Adding a new key value pair  
+  Two methods can be used:  
+    - `usernames["tango"] = "tango_user"` to append a new value to the end of the dictionary  
+    - `usernames.update({"tango": "tango_user"})` this also appends to the end of the dictionary  
+- To delete a kay/value pair, you need to reference the key as follows: `del usernames["Joe"]`  
+- To remove all items, you can use the `.clear()` method as follows: `usernames.clear()`  
+- To remove the last item, you can use `.popitem()`  
+- To copy a dictionary, you can use the `.copy()` method  
+  `usernames_backup = usernames.copy()`  
+
