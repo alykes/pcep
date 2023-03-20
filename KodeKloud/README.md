@@ -152,12 +152,12 @@ Summary:
 `print(~7)` = `-8`  
 `print(~-7)` = `6`  
 
-- Shortcut operators
-| Without Shortcut Operator | With Shortcut Operator |
-|---|---|
-|bit1 = bit1 & 22|bit1 &= 22|
-|bit1 = bit1 | 22|bit1 |= 22|
-|bit1 = bit1 ^ 22|bit1 ^= 22|
+- Shortcut operators  
+| Without Shortcut Operator | With Shortcut Operator |  
+|---|---|  
+|bit1 = bit1 & 22|bit1 &= 22|  
+|bit1 = bit1 | 22|bit1 |= 22|  
+|bit1 = bit1 ^ 22|bit1 ^= 22|  
 
 #### Bit Shifting
 
