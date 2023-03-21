@@ -1,23 +1,23 @@
-### Print Command
-- stuff blah blah
+### Print Command  
+- stuff blah blah  
 
-### Literals
+### Literals  
 4 types of literals  
-- Integers
+- Integers  
   Can be represented with _ as well 1_000_000 is 1 million  
   minus numbers as well  
-  - Octals 0o 0O
-  - Hexadecimal 0x
-- Floating point numbers
-  Anything with a decimal part, even if it's x.0 or x. where x is an integer
-  Can be represented with e notation 1e-5 or 1E-5 (0.00005)
-- strings
-  represents text, wrapped in double or single quotes '""' "''" or escape them \' \" inside 
-- Boolean
-  True (1) or False (0)
+  - Octals 0o 0O  
+  - Hexadecimal 0x  
+- Floating point numbers  
+  Anything with a decimal part, even if it's x.0 or x. where x is an integer  
+  Can be represented with e notation 1e-5 or 1E-5 (0.00005)  
+- strings  
+  represents text, wrapped in double or single quotes '""' "''" or escape them \' \" inside  
+- Boolean  
+  True (1) or False (0)  
 
 
-### Arthimetic Operators
+### Arthimetic Operators  
 
 Python has 7 types of operators  
 
@@ -295,6 +295,15 @@ This will return a new list with the modified values
 - You can use the keyword global to access the variable in and old of that function  
 - Lists act differently, they are referenced by memory location, regardless of where you change the list, it will **always** change!
 - If the number of arguments is unknown, we can add a * before the parameter name ==> `def my_function(*students):`  
+- A function variable can be accessed from a function within a function  
+```
+def my_function():
+  x = 20
+  def my_inner_function():
+    print(x)   # This will print 20
+  my_inner_function()
+my_function()
+```  
 
 ### Tuples
 - One item tuple must be specified like `some_tuple = (1,)` or `some_tuple = 1,`  
