@@ -101,7 +101,9 @@ while condition_is_true:
     do_stuff()
 else:
     print("Getting out of the loop")
-```
+```  
+`else` blocks are always run at the end of a loop  
+
 
 ### for loops
 for i in ...:  
@@ -323,9 +325,23 @@ usernames = {
   "Sarah": "bubble"
 }
 ```
+- Printing to dictionary  
+  `print(usernames)`  
 - To access data in a dictionary:  
   `print(usernames["ango"])` ==> `'ango_user'`  
 - If the key doesn't exist, you get a `KeyError`
+- If you have the same value for a key, the last one defined is printed!
+```
+testdict = {
+  "brand": "apple",
+  "ram": "3",
+  "year": 2020,
+  "year": 2021
+}
+```  
+`print(testdict)`  
+`{'brand': 'apple', 'ram': '3', 'year': 2021}`  
+
 
 #### Dictionary Methods
 - .keys()  
@@ -361,3 +377,12 @@ usernames = {
 - To copy a dictionary, you can use the `.copy()` method  
   `usernames_backup = usernames.copy()`  
 
+### Error Handling  
+- TypeError - Wrong data types passed in operations and functions  
+- ValueError - Wrong values passed in operations and functions  
+- NameError - When a variable isn't defined  
+- Multiple exceptions should be defined in brackets and with a , between them  
+  `except (TypeError, ZeroDivisionError)`  
+- Using the `raise` keyword  
+  Inside the try block together with a named exception  
+  Inside the except block, but unnamed  
