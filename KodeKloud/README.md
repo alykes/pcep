@@ -386,3 +386,18 @@ testdict = {
 - Using the `raise` keyword  
   Inside the try block together with a named exception  
   Inside the except block, but unnamed  
+
+- Example of a TypeError vs a ValueError  
+```
+>>> value = input("Enter a value: ")
+Enter a value: a
+>>> print(10/value)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for /: 'int' and 'str'
+>>> value = int(input("Enter a value: "))
+Enter a value: a
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: 'a'
+```
