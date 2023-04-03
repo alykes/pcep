@@ -12,4 +12,16 @@ https://jupyter.org/try
 - Completed the introduction and Section 2: Modules and Packages  
 30th March 2023  
 - Going through Section 3: Strings  
-- Wrote a some tests so that I can familiarise myself with how methods work  
+- Didn't do the mini project at the end, I might circle back to it    
+- Wrote some tests so that I can familiarise myself with how string methods and functions work  
+31st March 2023  
+- Section 4: Object-Oriented Programming (OOP), starting this today.  
+1st April 2023 - Saturday  
+- Break  
+2nd April 2023 - Sunday  
+- Break  
+3rd April 2023 - Monday  
+- Continuing the second half of Section 4: Object-Oriented Programming (OOP)  
+  - Completed the OOP module, not doing the mini-project as I would like to progress on the content.  
+- Starting Section 5: Exceptions  
+4th April 2023 - Tuesday
