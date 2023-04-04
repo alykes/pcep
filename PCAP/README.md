@@ -24,4 +24,5 @@ https://jupyter.org/try
 - Continuing the second half of Section 4: Object-Oriented Programming (OOP)  
   - Completed the OOP module, not doing the mini-project as I would like to progress on the content.  
 - Starting Section 5: Exceptions, looks like it's the exact same content as PCEP...will gloss over this.  
+- Completed Section 5 and starting on Section 6: Miscellaneous (got up to lamndas)
 4th April 2023 - Tuesday
