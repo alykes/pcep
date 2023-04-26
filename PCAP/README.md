@@ -4,6 +4,11 @@ These folder contains that notes that I created while preparing for the PCAP exa
 Jupyter Notebooks online  
 https://jupyter.org/try  
 
+Courses that align with this certification:  
+- Udemy: https://www.udemy.com/course/python-pcap/  
+- Python Institute: https://edube.org/study/pe2  
+
+
 ### Study Tracking notes  
 
 29th March 2023  
@@ -29,3 +34,9 @@ https://jupyter.org/try
 - Continued with Section 6: Miscellaneous, up to files, will continue tomorrow and finish off the course material.  
 5th April 2023 - Wednesday  
 - Continued with Section 6: Miscellaneous  
+6th April 2023 - Thursday  
+- Finshed content, done some review tests  
+7th April 2023 - Friday  
+- School holidays start, break for 2 weeks + public holidays (couple of days of family time)  
+27th April 2023 - Thursday  
+- Commencing the edg course
