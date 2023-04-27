@@ -39,4 +39,7 @@ Courses that align with this certification:
 7th April 2023 - Friday  
 - School holidays start, break for 2 weeks + public holidays (couple of days of family time)  
 27th April 2023 - Thursday  
-- Commencing the edg course
+- Commencing the edg course:  https://edube.org/learn/pe-2/about-pe2-2  
+- Started on module 1, completed 1.1, 1.2 and 1.3  
+28th April 2023 - Friday  
+- Continuing module 1, going from 1.4: https://edube.org/learn/pe-2/python-package-installer-pip-6  
