@@ -168,3 +168,35 @@ https://edube.org/learn/pe-2/section-summary-90
 ### Module 1.4  
 #### Python Package Installer  
 
+To maintain accessibility and usability, there are two things that need to be in place: **a centralised repository** and a tool that allows users to **access the repository**  
+The repository name is `PyPI` short for **Python Package Index**, this is maintained by the **Python Working Group** as part of the **Python Software Foundation**  
+You can also create your own repo, if you so wish, eg Artifactory  
+The PyPI repo is often times referred to as the **Cheese Shop**  
+
+The tool to access PyPI is `pip` short for **pip installs packages**  
+
+There are two ways to install pip on linux:  
+- Using something like _apt_ - **recommended**  
+- using internal Python mechanisms  
+
+**Dependecies are a phenomenon that appears everytime you're going to use a piece of software that relies on other software**  
+Fulfilling all subsequent requirements based on parent requirements is called `dependency hell`. _Pip_ resolves the dependencies for you.  
+
+<ins>Using Pip</ins>  
+
+- `pip3 help`                     - brings up the help menu  
+- `pip3 help <operation>`         - will give you information about that specific operation  
+- `pip list`                      - lists all the packages that have been installed, giving the package and the version    
+- `pip show <package_name>`       - will provide a verbose description of the package, from metadata within the package  
+- `pip search <any_string>`       - (case sensitive) will search PyPI for _package names_ and the _package summary strings_. Not supported in the latest pip version, use https://pypi.org/search instead.  
+- `pip install --user <pkg>`      - will install the package only for that specifc user  
+- `pip install -U <package_name>` - will update the package to the latest, you can also use `--upgrade`  
+- `pip install <package_name>==<package_version>` - will install a package at the requested version, e.g., `pip install pygame==2.3.0`  
+- `pip uninstall <package_name>`  - to uninstall a package, will ask for confirmation  
+
+
+<ins>Refer to the section summary</ins>  
+https://edube.org/learn/pe-2/section-summary-91  
+
+Quiz 90% (there was an actual error in the question)  
+Test 94% (another error in the question)  

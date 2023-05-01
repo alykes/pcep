@@ -43,3 +43,13 @@ Courses that align with this certification:
 - Started on module 1, completed 1.1, 1.2 and 1.3  
 28th April 2023 - Friday  
 - Continuing module 1, going from 1.4: https://edube.org/learn/pe-2/python-package-installer-pip-6  
+- Finished module 1.  
+- Started on module 2 today and got up to 2.3  
+29th April 2023 - Satruday  
+- Break  
+30th April 2023 - Sunday  
+- Break  
+1st May 2023 - Monday  
+- Will resume with 2.3: https://edube.org/learn/pe-2/string-methods-49  
+- Got hlafway through 2.5: https://edube.org/learn/pe-2/four-simple-programs-15
+2nd May 2023 - Tuesday  
