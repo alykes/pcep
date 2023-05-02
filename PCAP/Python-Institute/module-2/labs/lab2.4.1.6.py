@@ -1,3 +1,5 @@
+# Convert integers to a graphical LED display
+
 def configure_led(number_string):
     final_result = []
     row_list = []

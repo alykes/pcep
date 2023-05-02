@@ -1,3 +1,4 @@
+# Splitting strings and resturns the elements as lists
 def mysplit(strng):
     #
     lst = []

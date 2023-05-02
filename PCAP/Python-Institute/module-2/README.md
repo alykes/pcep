@@ -160,8 +160,75 @@ https://edube.org/learn/pe-2/section-summary-95
 
 
 ### Module 2.5  
-#### Four Simple Programs  
+#### Four Simple Programs + a bunch of labs!  
 
-This module contains 4 simple programs, as the title states and basica explanations for them.
+This module contains 4 simple programs, as the title states and basic explanations for them.  
+
+<ins>Refer to the Summary Page</ins>  
+https://edube.org/learn/pe-2/section-summary-96  
+
+### Module 2.6  
+#### Errors  
+
+When your code does something wrong, Python does two things:  
+  - it **stops your program**  
+  - it creates a special kind of data, called an **exception**  
+Both of these activities are called **Raising an Exception**  
+
+So what happens when a program raises an exception?  
+  - the raised exception expects somebody or something to take care of it!  
+  - if nothing happens, the program is **forcibly terminated** and you will see an **error message** in the console.  
+  - otherwise, the exception can be **handled**, the suspended program can be resumed and the execution can continue.  
+
+Python allows you to **observe exceptions, identify them and handle them**.  
+
+- try..except blocks
+  `try` begins a block of code which may or may not perform correctly, hence **try**  
+  `except` starts a piece of code which is executed if anything inside the `try` block goes wrong. This code should provide an `adequate reaction` to the raised exception.  
+  _If an exception is raised in the try block, then the code immediately jumps to the exception and the rest of the try block does not execute._  
+
+  Detailed exception brances, that is those with multiple exception types need to adhere to a few rules:  
+    - except branches are searched in the order that they appear  
+    - can't have except branches with the same name  
+    - `try` always needs at least one `except` after it **(named or not)** and the same is true for the reverse   
+    - as soon as one except block is executed, all the others are omitted   
+    - an `except` block without a named exception must be placed last  
+
+<ins>Refer to the Summary Page</ins>  
+https://edube.org/learn/pe-2/section-summary-97  
 
 
+### Module 2.7  
+#### The anatomy of exceptions  
+
+Python3 has 63 defined exceptions, all of them form a tree shaped heirarchy.  
+At the highest level is `BaseException`  
+An example is `ZeroDivisionError` -> `ArithmeticError` -> `Exception` -> `BaseException`  
+
+**Note:** this heirarchy places a role in hoe exceptions are traversed in the except block, refer to `17.exceptions.py`  
+Remember that the order of branches matters!  
+  - Don't put general branches before concrete ones  
+  - Python won't generate errors or warning based on how you structure your branches  
+  - Also remember the heirarchy and plan your branches accordingly  
+
+You can handle more than one exception in a single branch, to do so, you just add the additional exception as follows, `except (ZeroDivisionError, ValueError)`  
+**NOTE: Don't forget the parentheses!**  
+
+**If an exception is raised in a function, it can be handled inside or outside of the function.** Refer `18.exception.py`  
+The exception raised can cross **function** and **module** boundaries.  
+
+- `raise` you can use this keyword to raise an exception, refer to `19.exceptions.py`  
+  - this allows you to simulate raising an actual exception  
+  - to partially handle an exception and make another part of the code responsible for completing the handling (separation of concerns)  
+  - Note that if you only use the key word `raise`, without an exception type, it can only be used inside an `except:` branch! If used in any other context, it causes an error!  
+
+- `assert` will evaluate an expression. Refer `20.assert.py`  
+  - assert expects, `True`.  
+  - **If the assert is equal to zero, an empty string or `None` it will immediately raise an exception named `AssertionError`, we say that the assertion has failed.**  
+  Where should it be used?  
+    - Use it where you want to be **absolutely safe from evidently wrong data**  
+    - raising an AssertionError secures your code from producing invlaid results.  
+    - **assertions don't supersede exceptions or validate the data** - they are supplements!  
+
+<ins>Refer to the Summary Page</ins>  
+https://edube.org/learn/pe-2/section-summary-98  

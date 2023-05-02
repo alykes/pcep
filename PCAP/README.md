@@ -65,6 +65,11 @@ Courses that align with this certification:
 
 1st May 2023 - Monday  
   - Will resume with 2.3: https://edube.org/learn/pe-2/string-methods-49  
-  - Got hlafway through 2.5: https://edube.org/learn/pe-2/four-simple-programs-15
+  - Got halfway through 2.5: https://edube.org/learn/pe-2/four-simple-programs-15
 
 2nd May 2023 - Tuesday  
+  - Kicking off today with 2.5, hoping to finish off all of 2!  
+  - Got up to 2.8  
+
+3rd May 2023 - Wednesday  
+ - Kicking off from 
