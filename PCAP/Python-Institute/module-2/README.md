@@ -232,3 +232,50 @@ The exception raised can cross **function** and **module** boundaries.
 
 <ins>Refer to the Summary Page</ins>  
 https://edube.org/learn/pe-2/section-summary-98  
+
+
+
+### Module 2.8  
+#### Useful Exceptions  
+
+This module will go through some of the most 'useful' exceptions. Refer to `21.builtin.ex.py`    
+
+- `ArithmeticError`  
+  Location: BaseException ← Exception ← ArithmeticError  
+  Description: An **abstract** exception that covers a wide range of arithmetic operations like zero division and invalid math domain.  
+- `AssertionError`
+  Location: BaseException ← Exception ← AssertionError  
+  Description: A **concrete** exception raised by an assert statement when its argument evaluates to `False`, `None`, `0` or an `empty string`.  
+- `BaseException`  
+  Location: BaseException (Can't get any higher than this bad boy!)  
+  Description: The most general or **abstract** of all Python Exceptions. `except:` and `except BaseException:` are equivalent!  
+- `IndexError`  
+  Location: BaseException ← Exception ← LookupError ← IndexError  
+  Description: A **concrete** exception raised when you try to access a non-existant sequence element.  
+- `KeyboardInterrupt`  
+  Location: BaseException ← KeyboardInterrupt  
+  Description: A **concrete** exception raised when a keyboard shortcut is used to terminate a program's execution, such as _Ctrl + C_  
+- `LookupError`  
+  Location: BaseException ← Exception ← LookupError
+  Description: An **abstract** exception including all exceptions caused by errors resulting from invalid references to different collection types (list, dictionaries, tuples etc)  
+- `MemoryError`  
+  Location: BaseException ← Exception ← MemoryError  
+  Description: A **concrete** exception raised when an operation can't be completed due to the lack of memory.  
+- `OverflowError`  
+  Location: BaseException ← Exception ← ArithmeticError ← OverflowError  
+  Description: A **concrete** exception raised when an operation produces a number too big to be successfully stored.  
+- `ImportError`  
+  Location: BaseException ← Exception ← StandardError ← ImportError  
+  Description: A **concrete** exception raised when an import operation fails.  
+- `KeyError`  
+  Location: BaseException ← Exception ← LookupError ← KeyError  
+  Description: A **concrete** exception raised when you try to access a collection's non-existent element (e.g., a dictionary's element).  
+
+
+<ins>Refer to the Summary Page</ins> 
+https://edube.org/learn/pe-2/section-summary-99
+
+Quiz 90%   
+Test 93%  
+
+

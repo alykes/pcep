@@ -198,5 +198,5 @@ Fulfilling all subsequent requirements based on parent requirements is called `d
 <ins>Refer to the section summary</ins>  
 https://edube.org/learn/pe-2/section-summary-91  
 
-Quiz 90% (there was an actual error in the question)  
-Test 94% (another error in the question)  
+Quiz 90%  
+Test 94%   

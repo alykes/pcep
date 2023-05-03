@@ -69,7 +69,15 @@ Courses that align with this certification:
 
 2nd May 2023 - Tuesday  
   - Kicking off today with 2.5, hoping to finish off all of 2!  
+  - Got bogged down with a tonne of labs
   - Got up to 2.8  
 
 3rd May 2023 - Wednesday  
- - Kicking off from 
+ - Kicking off from 2.8: https://edube.org/learn/pe-2/useful-exceptions-9  
+ - Finished Module 2!  
+ - Started on Module 3: https://edube.org/learn/pe-2/python-essentials-2-module-3-1  
+ - Got up to Module 3.3  
+
+4th May 2023 - Thursday  
+ - Continuing with Module 3.3: https://edube.org/learn/pe-2/oop-properties-24  
+ 
