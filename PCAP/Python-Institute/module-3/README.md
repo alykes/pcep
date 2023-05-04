@@ -113,7 +113,59 @@ When creating methods inside the class, it must always have `self` as the first 
 <ins>Refer to the summary section</ins>
 https://edube.org/learn/pe-2/section-summary-101
 
-### Module 3.3  
-#### OOP Properties
 
-- Instance Variables  
+
+### Module 3.3  
+#### OOP Properties  
+
+In general a class can be equipped with two different kinds of data to form a class property.  
+This type of class property exists when and only when it is explicitly created and added to an object! This is done during the object initialisation in the constructor.  
+  Moreover, it can be done in any moment of the object's life ..and.. and existing property can be removed at any time!  
+
+Such an approach has some important consequences:  
+  - Different objects of the same class **may possess different sets of properties**.  
+  - There needs to be a way to **safely check if a specific object owns a property** that you want to utilise.  
+  - Each object **carries its own set of properties**  
+
+These variables (properties) are called **instance variables**  
+
+- **Instance Variables** (Refer to `9.instancevaraible.py` and `10.instancevariable.py`)  
+  They are tied closely to the instance itself and not the class.  
+  To see which properties/variables a object has, you can use the `__dict__` property to see them. It's quite handy!  
+  Modifying an instance variable on any object has no impact on all the remaining objects. It only affects the current object possessing that "new" property.  
+  Instance variables are perfectly isolated from each other.  
+  You can make an instance variable private.  
+  When printing the `__dict__` of an object and it contains private variables, Python **mangles** the the name, eg `_ExampleClass__firstvar`. Class Name then variable name. 
+    **If you add a private variable outside the class code, then the variable will not be mangled!**   
+  You can still access a private variable outside of the class using something like this: `print(example_object_1._ExampleClass__first)`  
+
+- **Class Variable** (Refer to `11.classvariable.py` and `12.classvariable.py`)  
+  A class variable is a **property which exists in just one copy and is stored outside any object**.  
+  A class variable exists in one copy even if there are no objects in the class.  
+  A class variable **aren't shown** in the `__dict__` property.  
+  A class variable always presents the same value in all objects (class instances).  
+
+- `__dict__` - refer to `14.classvariabletest.py`  
+  You can use this to see the properties of a class or an object.  
+  If you use it on the class, you will see any class properties.  
+  **NOTE** `varia`, `self.varia` and `ExampleClass.varia` are all entirely different and independent variables!!! They can be treated as individual variables that aren't related at all.  
+
+- Checking that an attribute exists  
+  Compared to other programming languages **you may not expect that all objects of the same class have the same sets of properties**.  
+  Refer to `15.check.py` to see that when referencing a non-existant object (class) attribute, you get an `AttributeError`  
+  To check for the existence, you can use a `try..except` block but isn't recommended (refer `16.check.py`), the best approach is the `hasattr()` function!  
+  `hasattr()` function is able to check if any object/class contains a specific property!  
+    This function requires two parameters:
+      - the class or object name
+      - the name of the property that you would like to check, **it needs to be a string**  
+  Refer to `17.check.py` to see `hasattr()` in action.  
+
+
+<ins>Refer to the summary section</ins>  
+https://edube.org/learn/pe-2/section-summary-102   
+
+
+
+### Module 3.4  
+#### Methods  
+
