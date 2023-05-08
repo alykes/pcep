@@ -169,3 +169,176 @@ https://edube.org/learn/pe-2/section-summary-102
 ### Module 3.4  
 #### Methods  
 
+_Definition:_  
+In it's simplest definition, a method is simply a function embedded in a class.  
+
+There is one fundamental requirement, **a method is obliged to have at least one parameter**.  
+The first parameter is usually named `self` and this convention should be followed.  
+When invoking the method outside the class, don't provide the `self` parameter.  
+Any parameters need to be placed after `self` in the class definition.  
+
+- `self`  
+  - The `self` parameter is used `to obtain access to the objects's instance and class variables`.  
+    Refer to `23.self.py` for an example.  
+  - The `self` parameter is also used `to invoke other object/class methods from inside the class`.  
+    Refer to `24.self.py` for an example.  
+
+- `__init__` constructor (refer to `24.constructor.py`)  
+  - if you name a method this, it will be the class constructor.  
+  - If a class has a constructor, it will be invoked automatically and implicitly when the object of the class is instantiated.  
+
+  The constructor:
+    - Is **must have the** `self` **parameter**
+    - **may, but doesn't need to, have more parameters** than just `self` 
+    - **can be used to set up the object**, it initialises the internal state of objects that use the class.  
+    - The constructor **cannot** return a value.  
+    - **cannot be invoked directly either from the object or from inside the class**, although you can invoke it from an object's subclass.  
+
+  As `__init__` is a method, and a method is basically a function and you can do the same tricks that you do with constructors/methods as you do with ordinary functions.  
+  refer to `26.constructor.py`  
+  **Property name mangling** also _applies to methods as well_, refer to `27.mangle.py`  
+
+- **The inner life of classes and objects**  
+  Each Python class and object is pre-equipped with a set of useful attributes.  
+  One of them is the `__dict__` property.  
+  - The `__dict__` property:  
+    - Stores a dictionary of the properties.  
+    - on the object only shows the variables.  
+    - on the class it shows the class variables and the class methods.  
+    - In example `28.dict.py` you can see how this.  
+  - The `__name__` property:  
+    - Stores a string  
+    - The `__name__` property contains the **name of the class**.  
+    - Handy if you want to find the class of a particular object, in combination with `type()`  
+    - refer to `29.type.py`    
+  - The `__module__` property:  
+    - Stores a string  
+    - It returns the **module name that contains the definition of the class**.  
+    - `__main__` is common to see when you have created the class in the **file that is currently being run**  
+  - The `__bases__` property:  
+    - Stores the classes, _not class names_, of the direct **superclasses** for the class in a tuple.  
+    - The order they are stored in is the same as the class definition.  
+    - **NOTE** only classes have this property, objects do not!  
+    - **NOTE** A class without an explicit superclass points to **object**, _a predefined Python class_, as its direct ancestor.
+    - Refer to `30.bases.py`  
+
+- **Reflection and Introsepction**  
+  - **introspection** is the ability of a program to examine the type of properties of an object at runtime.  
+  - **reflection** is the ability of a program to manipulate the values, properties and/or functions of an object at runtime.  
+  - Both reflection and introspection enable a programmer to do anything with any object, no matter where it comes from.  
+  - A perfect example of this is `31.investigation.py`  
+
+
+<ins>Refer to the summary section</ins>  
+https://edube.org/learn/pe-2/section-summary-103  
+
+
+
+### Module 3.5  
+#### Inheritance  
+
+- `__str__()`  
+  - First you need to understand how an object **presents** itself. Refer to `33.present.py`  
+  - When you put an object in a `print()` statement, you can use a class method named `__str__()` to produce a customised result. Refer to `34.present.py`  
+
+- inheritance is a common practice of **passing attributes and methods from the superclass (defined and existing) to a newly created class, called the subclass.**  
+  It's basically **a way of building a new class, not from scratch, but by using an already defined repertoire of traits**.  
+  So we say that the new class, inherits everything and is then able to add new methods and properties.  
+  You can therefore build more specialised `concrete` classes.  
+  Inheritance is fully transitive! **Note:** if `B` is a _subclass_ of `A` and `C` is a _subclass_ of `B`, this also means that `C` is a _subclass_ of `A`!   
+  Refer to `35.inheritance.py`  
+
+- `issubclass(ClassOne, ClassTwo)` - This function offers the ability to identify a relationship between two classes. It can check whether a class is a subclass of another class.  
+  - Will return `True` if **ClassOne** is a subclass of **ClassTwo**   
+  - **NOTE** Each class is also considered to be a subclass of itself!  
+  - Refer to `36.subclass.py` for an example.  
+
+- `isinstance(ObjectName, ClassName)` - Checks to see if an object is an instance of a class (or superclass).  
+  - Returns `True` if `ObjectName` is an instance of `ClassName`.  
+  - Note that inheritance also determines if the instance is inheriting a **superclass** and will return **True** if it is.  
+  - Refer to `37.instance.py` for an example.  
+
+- `is` operator, this is used to check whether two variables refer to the same object. Such as `object_one is object_two`  
+  - Important to note that the variables do not store the object themselves but **only handles pointing to the internal Python memory of the object**.  
+  - variables that are assigned objects, do contain the actual object but rather a pointer to the location in memory where the object is stored, that is why variables can point to the same object.  
+  - Refer to `38.is.py` to see how `is` works when checking objects.  
+
+- A look into how Python inherits methods. In particular how a subclass calls the constructor of the superclass.  
+  - refer to `39.construct.py`  
+
+- `super()` function is quite handy as it allows you **to access any of the superclass resources** without needing to know the name of the superclass.  
+  - So you could write `super().__init__(name)` instead of `Super.__init__(self, name)`  
+  - Note that you don't need to pass **self** to the function and can therefore invoke the constructor using one argument.  
+  - Refer to `39.construct.py` and `40.construct.py` for a practical example.  
+
+- Class variables  
+  - Accessing class variables across subclasses and superclasses.  
+  - Refer to `41.classvars.py` for different methods of creating and using class variables.  
+
+- A few points on how Python finds properties and methods.  
+  When you try to access any object's entity, Python will try (in this order):  
+   - find it inside the object itself.  
+   - find it in all the classes involved in the object's inheritance line from bottom to top;  
+     If both of there fail, then Python will raise an **AttributeError** exception  
+  - The following example has a good breakdown of the inheritance line, `42.inheritance.py`  
+
+- **Multiple Inheritance**  
+  - Multiple inheritance occurs when you a class has more than one superclass.  
+  - Syntactically, this is represented with a comma separated list of superclasses, e.g., `class Sub(SuperA, SuperB)`.  
+  - This means that the `Sub` class has **two** superclasses and will inherit all the goods offered by both `SuperA` and `SuperB`.  
+  - Refer to `43.multi.py`  
+
+- **overriding**  
+  - Remember that Python will look from the bottom up for inheritance, this also goes for overriding!  
+  - If there are two superclasses on the line in a class definition, then inheritance and overriding goes from left to right!  
+  - Refer to `44.overriding.py` and `45.overriding.py` for examples on two situation that have conflicting entities.  
+
+- Polymorphism  
+  - This is when the exact same call of an entity behaves in two completely different ways depending on the how the call originated.  
+  - This can occur when the subclass is able to modify its superclass behaviour.  
+  - Refer to `46.poly.py` and `47.poly.py`  
+
+- **abstract method**  
+  - This is when you don't have any details in a method, except for a `pass` statement or similar.  
+  - Basically a place holder with a descriptive method name that will have it's details filled out later.  
+
+- **composition**  
+  - Inheritance is not the only way of constructing adaptable classes, you can usually achieve the same goals using the technique named composition.  
+  - **Composition is the process of composing an object using other different objects**.  
+  - The object used in the composition delivers a set of desired traits (properties or methods). They are like blocks used to build a more complex structure.  
+  It can be said that:  
+    - **Inheritance extends a class's capabilities** by adding new components and modfying existing ones.  
+    - **Composition projects a class as a container** and has the ability to store and use other objects (which are derived from other classes), therefore **each of the objects implements a part of the desired class's behaviour**.  
+    - Take a very good look at the example.  
+    - THIS IS A TOPIC THAT NEEDS A BIT OF EXTRA EFFORT. Refer to `48.composition.py` for an example.  
+
+- **Single Inheritance vs. Multiple Inheritance**  
+  Note:  
+    - a single inheritance class is always simpler, safer, and easier to understand and maintain;  
+    - multiple inheritance is always risky, as you have many more opportunities to make a mistake in identifying these parts of the superclasses which will effectively influence the new class;  
+    - multiple inheritance may make overriding extremely tricky; moreover, using the `super()` function becomes **ambiguous**;  
+    - multiple inheritance violates the single responsibility principle as it makes a new class of two (or more) classes that know nothing about each other;  
+    - **we strongly suggest multiple inheritance as the last of all possible solutions** - if you really need the many different functionalities offered by different classes, composition may be a better alternative.  
+
+- **MRO** (Method Resolution Order)  
+  - MRO, in general, is a way (you can call it a strategy) in which a particular programming language scans through the upper part of a class’s hierarchy in order to find the method it currently needs.  
+  - refer to `49.mro.py`  
+
+- **The diamond Problem**  
+  - there is the top-most superclass named A;  
+  - there are two subclasses derived from A: B and C;  
+  - and there is also the bottom-most subclass named D, derived from B and C (or C and B, as these two variants mean different things in Python)  
+  - multiple inheritance is allowed but MRO is always in charge!  
+  Refer to `50.diamond.py` to see it expressed as Python code.  
+
+
+
+<ins>Refer to the summary section</ins>  
+https://edube.org/learn/pe-2/section-summary-1-2-8  
+https://edube.org/learn/pe-2/section-summary-2-2-11  
+
+
+### Module 3.6  
+#### More About Exceptions  
+
+  

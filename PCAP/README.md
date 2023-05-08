@@ -80,4 +80,18 @@ Courses that align with this certification:
 
 4th May 2023 - Thursday  
  - Continuing with Module 3.3: https://edube.org/learn/pe-2/oop-properties-24  
- - 
+ - Finished 3.3, moving onto 3.4  
+
+5th May 2023 - Friday  
+ - Continuing with labs from module 3.4: https://edube.org/learn/pe-2/the-timer-class-1  
+ - Done some lab work and moved onto module 3.5  
+
+6th May 2023 - Saturday  
+ - Break  
+
+7th May 2023 - Sunday  
+ - Break
+
+8th May 2023 - Monday  
+ -  Continuing on Module 3.5: 
+
