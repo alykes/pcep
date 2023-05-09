@@ -93,5 +93,9 @@ Courses that align with this certification:
  - Break
 
 8th May 2023 - Monday  
- -  Continuing on Module 3.5: 
+ - Continuing on Module 3.5 
+ - Got up to Module 3.6.1.6
 
+9th May 2023 - Tuesday  
+ - Continuing with Module 3.6.1.6: https://edube.org/learn/pe-2/exceptions-once-again-29  
+ 

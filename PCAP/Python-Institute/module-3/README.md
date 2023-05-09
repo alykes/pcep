@@ -338,7 +338,47 @@ https://edube.org/learn/pe-2/section-summary-1-2-8
 https://edube.org/learn/pe-2/section-summary-2-2-11  
 
 
+
 ### Module 3.6  
 #### More About Exceptions  
 
-  
+The **try..except** block can also have another branch named the `else` branch.  
+The `else` branch is executed only when no exception has been raised inside the `try:` part of the block.  
+So we can say that exactly one branch can be executed after a `try:`, that is one beginning with `except:` or one starting with `else:`.  
+An `else:` branch **must** be placed after an `except` branch.  
+Refer to `52.else.py`  
+
+The **try..except** block can also be extended by one more branch, `finally:`.  
+It **must** be the last branch.  
+`else:` and `finally:` can co-exist.  
+`finally:` is **ALWYAS** executed, if there was or wasn't an exception, it is still run!  
+
+**Exceptions are classes**. When an exception is raised, an object of the class is instantiated!  
+The `as` keyword is used to place the exception object in a variable, normally `e`, that is,  `except Exception as e:`  
+The identifiers scope only covers its `except` branch and doesn't go any further.  
+Refer to `54.exceptions.py` for an example.  
+Refer to `55.ex.tree.py` for a list of all the exceptions in a tree like output.  
+
+**Anatomy of Exceptions**  
+The `BaseException` class introduces a property named `args`.  
+`args` is a tuple designed to gather all arguments passed to the class constructor.  
+  If it's empty, the constructor is invoked without any arguments.  
+  Refer to `56.arg.ex.py` to see an elegant way of printing the `args` property.  
+
+**Creating your own exception**  
+You would create your own exceptions if you want to extend on the already existing ones.  
+You **define your own, new exceptions as subclasses derived from predefined ones**.  
+Depending on how narrow or broad you want your exception to be, you can derive it from say `Exception` for a broad exception type.  
+Refer to `57.defined.ex.py`  
+To create an exception classes from scratch, the most important things are to:  
+  - define the superclass  
+  - define the constructor  
+Refer to `58.defined.ex.py`  
+
+
+<ins>Refer to the summary section</ins>  
+https://edube.org/learn/pe-2/section-summary-104  
+
+Quiz 90%  
+Test 88%, 100% error on Exception and overwriting self.args in a class. Other was superclass constructor invocation.  
+
