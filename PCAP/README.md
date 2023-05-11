@@ -69,7 +69,7 @@ Courses that align with this certification:
 
 2nd May 2023 - Tuesday  
   - Kicking off today with 2.5, hoping to finish off all of 2!  
-  - Got bogged down with a tonne of labs
+  - Got bogged down with a tonne of labs  
   - Got up to 2.8  
 
 3rd May 2023 - Wednesday  
@@ -90,12 +90,27 @@ Courses that align with this certification:
  - Break  
 
 7th May 2023 - Sunday  
- - Break
+ - Break  
 
 8th May 2023 - Monday  
  - Continuing on Module 3.5 
- - Got up to Module 3.6.1.6
+ - Got up to Module 3.6.1.6  
 
 9th May 2023 - Tuesday  
  - Continuing with Module 3.6.1.6: https://edube.org/learn/pe-2/exceptions-once-again-29  
- 
+ - Finished Module 3  
+ - Starting on Module 4 today  
+ - Got up to 4.1.1.1  
+
+10th May 2023 - Wednesday  
+ - Kicking off 4.1.1.1: https://edube.org/learn/pe-2/generators-and-closures-42   
+ - Got up to 4.1.1.10: https://edube.org/learn/pe-2/generators-and-closures-51   
+ - Wasn't really motivated and lacked concentration.  
+
+11th May 2023 - Thursday  
+  - Continuing from 4.1.1.10  
+  - Got up to Module 4.3.1.1  
+  
+
+12th May 2023 - Friday  
+Continuing with Module 4.3.1.1: https://edube.org/learn/pe-2/working-with-real-files-42  
