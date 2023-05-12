@@ -257,15 +257,121 @@ Refer to `17.files.py` for a simple example of opening and closing a file.
   Refer to `19.errno.py` (not using `strerror()`) and `20.errno.py` (utilising `strerror()`)  
 
 
-
 <ins>Refer to the summary section</ins>  
 https://edube.org/learn/pe-2/section-summary-106
-
 
 
 
 ### Module 4.3  
 #### Processing Text and Binary Files  
 
+Basic techniques on reading file contents.  
+- There are multiple techniques and none is any better or worse than the other, you should be flexible with the one that you use.  
+
+- `read()` This is the most basic function to read the stream. Takes an integer argument and will read that many characters.  
+  If this function is applied to a text file then it is able to:  
+    - read a desired number of characters (including just one) from the file, and return them as a string  
+    - read all the file contents, and return them as a string  
+    - if there is nothing more to read (the virtual reading head reaches the end of the file), the function returns an empty string.  
+    - Refer to `22.charcount.py`  
+    - **NOTE** reading a terabyte-long file using this method may corrupt your OS!  
+
+- `readline()` This method will read the contents of a stream one line at a time.  
+  - The method attempts to **read a complete line of text from the file**  
+  - **A string is returned** on a successful read otherwise it will return an empty string.  
+  - Refer to `24.readline.py`  
+
+- `readlines()` This method will attempt to **read all the file contents and will return a list of strings, one element per file line**.  
+  - Not to be confused with `readline()` above, without the `s`.  
+  - readlines takes an integer argument, it specifies _how many bytes (characters)_ to read **NOT LINES!!**  
+  - It works in a couple of distinct ways.  
+    - If the buffer (argument) you specify is smaller than the line, it will read the entire line.  
+    - If the buffer (argument) you specify is larger than the line but smaller than the next line, it will only read the first line.  
+    - If the buffer (argument) you specify is larger than the line and larger than the next line, it will combine both lines into a single element.  
+  - Refer to `25.readlines.py`  
+
+- Trait of the object returned by the `open()` function in text mode.  
+  - **The object is an instance of the iterable class**.  
+  - The **iteration protocol defined for the file object** is very simple - its `__next__` method just **returns the next line read in from the file**.
+  - The object also automatically invokes `close()` when any of the file reads reaches the end of the file!  
+  - Refer to `25.open.iter.py`  
+
+- `write()` - Expects just one argument, a string that will be transferred to an open file. _Note:_ writing to a file in read mode won't succeed.  
+  - You need to add any new line characters that you would like in the file.  
+  - The write function can add character by character to a file as well.  
+  - Refer to `26.write.py` for an example.  
+
+- `sys.stderr.write("Some Error Message")` this is to write to stderr, you also need to `import sys`  
+  - refer to `27.write.py`  
 
 
+- **ByteArrays**  
+  - Overview  
+    - Python has a specialised class to store amorphous data.  
+    - **Amorphous data is data which have no specific shape or form** - they are basically just a series of bytes.  
+    - Don't think of amorphous data as strings or lists because they are neither.  
+    - The specialised class that Python uses is named **bytearray**.  
+    - A **bytearray** is a array containing (amorphous) bytes.  
+    - You need to invoke the creation of a bytearray object if you would like to read or process any amorphous data.  
+      - To create such a container, you can use the following bit of code:  
+        `data = bytearray(10)` the invocation creates a bytearray object able to store ten bytes and fills the whole array with zeros.  
+  
+  - Characteristics:  
+    - Bytearrays are mutable  
+    - You can use the `len()` function on them  
+    - You can access any of their elements using conventional indexing  
+    - You can't set a byte array an element with a value that is not an integer (TypeError)  
+    - You are only allowed to assign a value in the range 0 to 255 inclusive (or else you will get a ValueError)  
+    - You can treat bytearray elements as integer values  
+    - Refer to `28.bytearray.py`  
+
+  - Writing a byte array to a binary file.  
+    - `readinto()` is used to read the contents of the binary file into an existing bytearray.  
+    - the `readinto()` method also returns the number of successfully read bytes.  
+    - if the bytearray is smaller than the contents of the file, the operation will stop before the end of the file.  
+    - when working with a binary file, you need to include `b` in either the `open()` or `close()` methods.  
+
+  - Reading bytes from a stream.  
+    - `read()` is also available to read a binary file.  
+    - **Caution** if you try to invoke this without any arguments, it tries to **read all all the contents of the file into memory**.  
+      Which could potentially crash the OS if the file is larger than the available memory.  
+    - This methods works with the **bytes** class.  
+      The **bytes** class has similar properties to the **bytearray** class, _with one major difference_... The bytes class is **immutable**.  
+    - Refer to `30.bytes.py`  
+    - You can specifiy an argument for `read()` which will read that many bytes.  
+    - Refer to `31.bytes.py`  
+
+
+
+<ins>Refer to the summary section</ins>  
+https://edube.org/learn/pe-2/section-summary-107  
+
+
+### Module 4.4  
+#### The os module  
+
+This module lets you interact with the OS.  
+The os module provides functions that are available on linux or windows operating systems.  
+
+In addition to file and directory operations, the os module enables you to:  
+  - get information about the operating system  
+  - manage processes  
+  - operate on I/O streams using file descriptors.  
+
+The `os` module contains a few different methods:  
+  - `.uname()` This will return information on the current operating system, including the following attributes:  
+    - **systemname** — stores the name of the operating system  
+    - **nodename** — stores the machine name on the network  
+    - **release** — stores the operating system release  
+    - **version** — stores the operating system version  
+    - **machine** — stores the hardware identifier, e.g., x86_64  
+    - refer to `33.os.py` for an example.  
+  - `.name` is a property that you can you to get one of the following values: **posix**, **nt** or **java**(if your code is written in Jython)  
+  - `.mkdir()` this will create a directory, this function accepts a string. You can use a relative or absolute path.  
+    The function can also take the `mode` argument  
+  - `makedirs()` this will recursively create directories like the `mkdir -p` command on linux.  
+  - `.listdir()` this will output the contents of the current directory or a directory that has been passed as a string.  
+    This method omits the entries `.` and `..`  
+  - `chdir()` this will change directories and obviously needs a string.  
+  - `getcwd()` this will get the current working directory.  
+  
