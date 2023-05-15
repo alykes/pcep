@@ -369,9 +369,140 @@ The `os` module contains a few different methods:
   - `.name` is a property that you can you to get one of the following values: **posix**, **nt** or **java**(if your code is written in Jython)  
   - `.mkdir()` this will create a directory, this function accepts a string. You can use a relative or absolute path.  
     The function can also take the `mode` argument  
-  - `makedirs()` this will recursively create directories like the `mkdir -p` command on linux.  
+  - `makedirs()` this will recursively create directories like the `mkdir -p` command on linux. Refer `34.makedirs.py`    
   - `.listdir()` this will output the contents of the current directory or a directory that has been passed as a string.  
     This method omits the entries `.` and `..`  
   - `chdir()` this will change directories and obviously needs a string.  
-  - `getcwd()` this will get the current working directory.  
+  - `getcwd()` this will get the current working directory. Refer `35.getcwd.py`    
+  - `rmdir()` removed a single empty directory.  
+  - `removedirs()` will remove the directory and it's subdirectories. If the directory isn't empty an exception will be raised. Refer `36.removedirs.py`  
+  - `system()` This allows you to run a command on the OS. Refer `37.system.py`  
+    - **Windows** returns the value that is returned by the shell.  
+    - **Unix** returns the exit status of the process. A `0` means success.    
+
+
+
+<ins>Refer to the summary section</ins>  
+https://edube.org/learn/pe-2/section-summary-108   
+
+
+
+
+### Module 4.5  
+#### The datetime module    
+
+The modeule provides classes for working with date and time.  
+
+Date and time have countless uses and it's probably hard to find a production application that doesn't use them. Here are some examples:  
+  - event logging — thanks to the knowledge of date and time, we are able to determine when exactly a critical error occurs in our application. When creating logs, you can specify the date and time format  
+  - tracking changes in the database — sometimes it's necessary to store information about when a record was created or modified. The datetime module will be perfect for this case  
+  - data validation — Knowing the current date and time, we're able to validate various types of data, e.g., whether a discount coupon entered by a user in our application is still valid  
+  - storing important information — imagine bank transfers without storing the information of when they were made? The date and time of certain actions must be preserved, and we must deal with it.  
+
+- Getting the current local date and creating date objects from the `datetime` module  
+  One of the classes in the `datetime` module is a class called `date`, objects of this class represent a date consisting of a year, month and day.  
+  Refer to `38.datetime.py`  
+  The `today` method returns a date object representing the current local date.  
+  The date object has three **read only** attributes:  
+    - year (between 1 and 9999)  
+    - month (between 1 and 12)  
+    - day (between 1 and less than or equal to the last day of that month)   
+  To create a date object you must pass these values (year, month and day).  
+
+- The `time` module  
+  `.time()` method will return a **timestamp**.  
+  In Unix the **timestamp** expresses the number of seconds since **Unix epoch**, this is when counting started on Unix systems.  
+  The Unix Epoch is **January 1, 1970, 00:00:00 (UTC)**  
+  To get a timestamp we must create a date object and pass the timestamp method `.fromtimestamp()`  
+  Returns the number in the form of a float.  
+  Refer to `39.time.py`  
+
+- Creating the date object using the ISO format  
+  The `datetime` module provides several methods to create a `date` object. One of them is the `fromisoformat()` method.  
+  - `fromisoformat()` takes an argument in the form of a tring in the **YYYY-MM-DD** format which is compliant with the ISO-8601 standard.  
+  - Refer to `40.isodate.py` for an example.  
+
+- The `replace()` method can be used on a date object to replace either the year, month or the day.  
+  The replace method will return a changed date object, so you must remember to assign it to some variable.  
+  Refer to `41.datereplace.py`  
+
+- `weekday()` this method will return the day of the week as an integer value (0 to 6). **Monday is 0**.  
+  The date class has a similar method called `isoweekday` which also returns the day of the week as an integer but **Monday is 1**!!  
+  Refer to `42.dayofweek.py`  
+
+- Creating **time** objects  
+  The datetime module also has a class that allows you to represent time.  
+  It's definition is as follows:  `time(hour, minute, second, microsecond, tzinfo, fold)`  
+  All parameters are optional (default is 0)
+  - `microsecond` must be in the range 0 to less than 1000000.  
+  - `tzinfo` must be a tzinfo subclass object or `None`(default). Associated with timezones.  
+  - `fold` must be either 0 or 1 (default is 0). Associated with wall times.  
+  - Refer `43.time.py`  
+
+- The **time** module  
+  In addition to the `datetime` module, Python also offers a module called `time`  
+  This is not to be confused with the time function that we used in the datetime module.  
+  One of the useful functions is the sleep function which takes one parameter, an intger or float representing seconds. 
+  Refer to `44.sleep.py`  
+
+- `ctime()` this converts the timestamp since Unix epoch (1 Jan 1970) into a string.  
+  Refer to `45.ctime.py` for an example.  
+
+- `gmtime()` and `localtime()` functions  
+  These functions require knowledge of the **struct_time** class.  
+  **time.struct_time**:   
+    `tm_year`   # specifies the year  
+    `tm_mon`    # specifies the month (value from 1 to 12)  
+    `tm_mday`   # specifies the day of the month (value from 1 to 31)  
+    `tm_hour`   # specifies the hour (value from 0 to 23)  
+    `tm_min`    # specifies the minute (value from 0 to 59)  
+    `tm_sec`    # specifies the second (value from 0 to 61)  
+    `tm_wday`   # specifies the weekday (value from 0 to 6)  
+    `tm_yday`   # specifies the year day (value from 1 to 366)  
+    `tm_isdst`  # specifies whether daylight saving time applies (1 – yes, 0 – no, -1 – it isn't known)  
+    `tm_zone`   # specifies the timezone name (value in an abbreviated form)  
+    `tm_gmtoff` # specifies the offset east of UTC (value in seconds)  
   
+  The `struct_time` class also allows access to values using **indexes**. Index `0` returns the value in `tm_year`, while `8` returns the value in `tm_isdst`.  
+  **The exceptions are tm_zone and tm_gmoff, which cannot be accessed using indexes.**  
+  **Note:** For `gmtime()`, the `isdst` attribute is always `0`  
+  Refer to `46.timestruct.py`  
+
+- `asctime()` and `mktime()`  
+  The time module has functions that expect a struct_time object or a tuple that stores values according to the indexes presented.  
+  The first of the functions, called `asctime()`, **converts a struct_time object or a tuple to a string**.  
+  If you **don't provide an argument** to the `asctime()` function, **the time returned by the localtime function will be used**.  
+  The second function called `mktime()` converts a **struct_time** object or a tuple that expresses the local time to the number of seconds since the Unix epoch.  
+  Refer to `47.ascmktime.py`  
+
+- Creating `datetime` objects.  
+  In the `datetime` module, _date_ and _time_ can be represented as _separate objects or as one_. The **class** that combines date and time is called `datetime`.  
+  The definition is as follows: `datetime(year, month, day, hour, minute, second, microsecond, tzinfo, fold)`  
+  The constructor accepts a bunch of parameters, most of them we have seen above.  
+  `year, month, day, hour, minute, second, microsecond, tzinfo and fold`  
+  All parameters passed to the constructor go to read-only class attributes.  
+  Refer to `48.datetime.py`  
+
+- the datetime class has several methods that return the current date and time:  
+  - `today()` - returns the current local date and time with the tzinfo attribute set to `None`  
+  - `now()` - returns the current local date and time the same as the _today_ method, unless we pass the optional argument _tz_ to it. The argument of this method must be an object of the _tzinfo_ subclass   
+  - `utcnow()` - returns the current UTC date and time with the _tzinfo_ attribute set to `None`.  
+  - Refer to `49.datetime.py`  
+
+- Getting a timestamp  
+  `timestamp()` method is used to get the current timestamp.  
+  This is the amount of seconds since the unix epoch.  
+  Refer to `50.timestamp.py`  
+
+- Date and time formatting  
+  `strftime` this method allows us to return the date and time in a format that we specify.  
+  This method only takes one argument in the form of a string specifying the format (that can consist of **directives**).  
+  A directive is a string consisting of the character `%` and a letter, e.g., the directive `%Y` means the year with the century as a decimal number.  
+  Some common ones:  
+    - `%Y` – returns the year with the century as a decimal number e.g., 2020.  
+    - `%m` – returns the month as a zero-padded decimal number e.g., 01.  
+    - `%d` – returns the day as a zero-padded decimal number e.g., 04.  
+For a more comprehensive list, visit this page: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes  
+
+
+

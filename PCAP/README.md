@@ -114,7 +114,19 @@ Courses that align with this certification:
 12th May 2023 - Friday  
   - Continuing with Module 4.3.1.4: https://edube.org/learn/pe-2/working-with-real-files-45  
   - Skipping Labs in 4.3 for today, will do them at some point. Moving onto 4.4  
-  - Got up to Module: 4.4.1.5: https://edube.org/learn/pe-2/the-os-module-13
+  - Got up to Module: 4.4.1.5: https://edube.org/learn/pe-2/the-os-module-13  
 
 13th May 2023 - Saturday  
-  - 
+  - Break  
+
+14th May 2023 - Sunday  
+  - Break  
+
+15th May 2023 - Monday  
+  - Continuing with module 4.4.1.5: https://edube.org/learn/pe-2/the-os-module-13  
+  - Had a bit of a slow start today...cup of tea fixed that right up! `:o)`  
+  - Got up to 4.5.1.16   
+
+16th May 2023 - Tuesday  
+  - Continuing from: https://edube.org/learn/pe-2/the-datetime-and-time-modules-continued-14  
+  
