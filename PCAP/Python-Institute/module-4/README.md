@@ -26,7 +26,7 @@ Differences between a function and a generator:
   - A **function** will return _one value_  
   - A **generator** will return a _series of values_ and is (implicitly) invoked more than once!  
 
-In the code snippet above, the `range()` function is invoked six times, providing subsequent values from 0 to 4, before signaling that the series is complete.  
+In the code snippet above, the `range()` function is invoked five times, providing subsequent values from 0 to 4, before signaling that the series is complete.  
 
 - **The Iterator Protocol** is a way in which an object should behave to conform to the rules imposed by the context of the `for` and `in` statements.  
   - An object conforming to the iterator protocol is called an **iterator**  
@@ -494,15 +494,173 @@ Date and time have countless uses and it's probably hard to find a production ap
   This is the amount of seconds since the unix epoch.  
   Refer to `50.timestamp.py`  
 
-- Date and time formatting  
+- Date and time formatting (Refer to `51.directives.py` and `52.directives.py`)  
   `strftime` this method allows us to return the date and time in a format that we specify.  
   This method only takes one argument in the form of a string specifying the format (that can consist of **directives**).  
   A directive is a string consisting of the character `%` and a letter, e.g., the directive `%Y` means the year with the century as a decimal number.  
   Some common ones:  
-    - `%Y` – returns the year with the century as a decimal number e.g., 2020.  
-    - `%m` – returns the month as a zero-padded decimal number e.g., 01.  
-    - `%d` – returns the day as a zero-padded decimal number e.g., 04.  
-For a more comprehensive list, visit this page: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes  
+    - `%Y` – returns the year with the century as a decimal number e.g., 2020  
+    - `%y` - returns the year as a two digit number e.g., 05  
+    - `%m` – returns the month as a zero-padded decimal number e.g., 01  
+    - `%d` – returns the day as a zero-padded decimal number e.g., 04  
+  For a more comprehensive list, visit this page: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes  
+  Time formatting also works in the same way and uses directives associated with time.  
+  Some common ones are:  
+    - `%H` - returns the hours in two digits e.g., 23 or 00  
+    - `%M` - retruns the minutes in two digits e.g., 05 or 59  
+    - `%S` - returns the seconds in two digits e.g., 00 or 42  
+
+- The `strftime()` function in the **time** module  
+  It differs slightly from the one found in the datetime module, it can also take a **tuple** or **struct_time** object.  
+  **NOTE** If you don't provide a **tuple** or **struct_time** object then the formatting will be done on the current time!  
+  You can find a list of directives here: https://docs.python.org/3/library/time.html#time.strftime  
+  Refer to `53.timedirective.py` 
+
+- `strptime()` method creates a `datetime` object from a string representing a date and time.  
+  You need to specify the format that you would like to save the object as, as the second argument.  
+  Therefore, you can say that the second argument facilitates parsing of the string.  
+  If the format doesn't match the string, you will get a `ValueError`.  
+  This method is available in both the `time` and `datetime` modules.  
+  In the `time` module, the string parsed will be as a **struct_time** object.  
+  Refer to `54.strptime.py` for examples.  
+
+- Date and time operations  
+  The `timedelta` class in the **datetime** module is used for the purpose of performing calculations on **datetime** objects  
+  To create a `timedelta` object you just need to perform a subtraction on the `date` or `datetime` objects.  
+  Refer to `55.timedelta.py`  
+
+- Creating a `timedelta` object  
+  You can create a timedelta object by providing various arguments for the class constructor:  
+    - `days`, `seconds`, `microseconds`, `milliseconds`, `minutes`, `hours` and `weeks`  
+    - Each of these default to `0` if they are not specified.  
+    - The arguments can be integers or floating point numbers.  
+    - **NOTE** The timedelta object only stores **days, seconds and microseconds**.  
+    - The result of a calulation is days and hours  
+    - Weeks are converted to days, hours and minutes to seconds, and milliseconds to microseconds.
+    - Refer to `56.timedelta.py`  
+
+- Additional operations on timedelta objects  
+  - You can perform additional operation on timedelta objects, some of these include:  
+    - multiplication by an integer  
+    - addition  
+    - there are many more operations available  
+    - Refer to `57.timedelta.py`  
+  
+
+<ins>Refer to the summary section</ins>  
+https://edube.org/learn/pe-2/section-summary-109   
+
+
+### Module 4.6  
+#### The calendar module    
+
+Python contains a module named `calendar` which offers calendar related functionality.  
+Each day of the week has an integer representation. Refer to the table below:  
+
+|Day of the week|Integer value|Constant|
+|---|---|---|
+|Monday|0|calendar.MONDAY|
+|Tuesday|1|calendar.TUESDAY|
+|Wednesday|2|calendar.WEDNESDAY|
+|Thursday|3|calendar.THURSDAY|
+|Friday|4|calendar.FRIDAY|
+|Saturday|5|calendar.SATURDAY|
+|Sunday|6|calendar.SUNDAY|  
+
+For months, it starts from `January` being `1`.  
+There aren't constants that express the month.  
+
+- `calendar()`
+  To display the calendar for an entire year, you just invoke `calendar.calendar(2023)` after `import calendar` (The only required parameter is the year)  
+  The result displayed is similar to the `cal` command in unix.  
+  You can use the following parameters to change the formatting of the calendar:  
+    - `w` – date column width (default 2)  
+    - `l` – number of lines per week (default 1)  
+    - `c` – number of spaces between month columns (default 6)  
+    - `m` – number of columns (default 3)  
+
+  To display a calendar without using the `print()` function, you can invoke `calendar.prcal(2023)`  
+  Refer to `58.cal.py`  
+
+- `month()` - just requires a year and month as arguments.    
+  - This function allows you to display a calendar for a specific month.  
+  - You can also use the `calendar.prmonth(2023, 05)` to print the calendar without the need to use the `print()` function.  
+  - Refer to `59.calc.py` for some examples.  
+
+- `setfirstweekday()`  
+  - This will set the first day of the week for the calendar.  
+  - This function expects an integer.  
+  - You can also use a constant such as `calendar.SUNDAY` which would provide the number 6.  
+  - Refer to `60.cal.py` for an example.  
+
+- `weekday()`  
+  - This will return the day of the week as an integer value. 
+  - 0 = Monday ... 6 = Sunday 
+  - Refer to `61.weekday.py`  
+
+- `weekheader()`  
+  - Takes an integer argument for the amount of letters that you want the day of the week to have.    
+  - `weekheader(2)` will print two letter days `Mo`, `Tu` etc.  
+  - `weekheader(3)` will print three letter days `Mon`, `Tue` etc.  
+  - if you set `setfirstday()`, this will affect the dispaly of the day order.  
+  - Refer `62.weekheader.py`  
+
+- `isleap()`  
+  - You need to provide a year.  
+  - Will return `True` if it is a leap year, otherwise `False`  
+
+- `leapdays()`  
+  - Requires two arguments, a number range, separated by a comma.  
+  - Up to but not including the second number.  
+  - Refer to `63.leapyear.py`  
+
+- Classes for creating calendars  
+  - There are a few clases that the calendar module offers:  
+    - `calendar.Calendar` – provides methods to prepare calendar data for formatting  
+    - `calendar.TextCalendar` – is used to create regular text calendars  
+    - `calendar.HTMLCalendar` – is used to create HTML calendars  
+    - `calendar.LocalTextCalendar` – is a subclass of the `calendar.TextCalendar` class. The constructor of this class takes the _locale_ parameter, which is used to return the appropriate months and weekday names  
+    - `calendar.LocalHTMLCalendar` – is a subclass of the `calendar.HTMLCalendar` class. The constructor of this class takes the _locale_ parameter, which is used to return the appropriate months and weekday names  
+
+- Creating a Calendar object  
+  - The `Calendar` class constructor only takes **one optional** parameter named `firstweekday`, default is 0 (Monday)  
+  - There is a class method named `iterweekdays` which returns an iterator for week day numbers.  
+    - the first value returned is always the value in the `firstweekday` property.  
+  - Refer `64.calendar.py`  
+
+- `itermonthdates()`  
+  - this is an other iterator in the Calendar class  
+  - It requires the calendar year and the month to be specified  
+  - It returns all the days in a specified month **as well as all the days before the beginning of the month and after that are necessary to get a complete week.**  
+  - Each object is represented by a `datetime.date` object  
+  - Refer to `65.itermonths.py`  
+
+- `itermonthdays()`  
+  - takes **year** and **month** as parameters, and then returns the iterator to the days of the month represented by numbers  
+  - if it's not in the month specified, then it will return a zero else it will return the day of the month  
+  - Refer to `66.itermonthdays.py`  
+
+- There are other methods that return iterators, they are:  
+  - `itermonthdays2` – returns days in the form of tuples consisting of a day of the month number and a week day number  
+  - `itermonthdays3` – returns days in the form of tuples consisting of a year, a month, and a day of the month numbers. This method has been available since version 3.7  
+  - `itermonthdays4` – returns days in the form of tuples consisting of a year, a month, a day of the month, and a day of the week numbers. This method has been available since Python version 3.7  
+
+- `monthdays2calendar()`  
+  - This method takes **year and month** as parameters  
+  - Returns a list of weeks in a specific month  
+  - Each week is a tuple consisting of day numbers and weekday numbers  
+  - **Note** that days numbers outside the month are represented by 0  
+  - There are other methods in this location https://docs.python.org/3/library/calendar.html   
 
 
 
+
+<ins>Refer to the summary section</ins>  
+https://edube.org/learn/pe-2/section-summary-110  
+
+Quiz  - 75% with no revision  
+        - `map()` can accept more than 2 arguments  
+        - `filter()` function returns an iterator  
+        - `os.mkdir()` returns `FileExistsError` exception if directory exists.  
+        92% then 100% on the third attempt, fuzzy around the map and filter functions.  
+Test - 

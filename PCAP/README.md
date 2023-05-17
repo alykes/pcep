@@ -128,5 +128,15 @@ Courses that align with this certification:
   - Got up to 4.5.1.16   
 
 16th May 2023 - Tuesday  
-  - Continuing from: https://edube.org/learn/pe-2/the-datetime-and-time-modules-continued-14  
+  - Continuing from: https://edube.org/learn/pe-2/the-datetime-and-time-modules-continued-14   
+  - Got up to 4.6.1.5  
+
+17th May 2023 - Wednesday  
+  - Continuing from 4.6.1.5: https://edube.org/learn/pe-2/the-calendar-module-19  
+  - Got up to the final exam.  
+
+18th May 2023 - Thursday  
+  - Will attempt the final exam: https://edube.org/quiz/pe-2/pe2-module-4-test-1  
+  - Continue to do the labs that I skipped over.  
   
+
