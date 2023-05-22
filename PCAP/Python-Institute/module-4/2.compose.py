@@ -1,5 +1,6 @@
-# Adding the iterator into another object class, so that it can be called fromt here.  
+# Adding the iterator into another object class, so that it can be called from there.  
 # Notice that the constructor of the class Class point to self.__iter = Fib(n)
+# This is using the compose method
 class Fib:
     def __init__(self, nn):
         self.__n = nn

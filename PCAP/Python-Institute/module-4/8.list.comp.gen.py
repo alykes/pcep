@@ -24,3 +24,7 @@ simple_list = [1 if x % 2 == 0 else 0 for x in range(10)]
 
 print(simple_list)              # Will print the list with all the elements
 
+# Create a list of even numbers only
+# Note the conditional statement is at the end in this list comprehension example
+even_list = [x for x in range(10) if x % 2 == 0]
+print(even_list)

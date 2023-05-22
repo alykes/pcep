@@ -34,12 +34,12 @@ In the code snippet above, the `range()` function is invoked five times, providi
 An iterator must have two methods:  
   - `__iter__()` which returns the object itself and is invoked once.  
     The `__iter__` method should extract the iterator and entrust it with the execution of the iteration protocol.  
-  - `__next__()` which returns the next value of the series, it is invoked by the `for`/`in` staatements in order to pass through the next iteration.  
+  - `__next__()` which returns the next value of the series, it is invoked by the `for`/`in` statements in order to pass through the next iteration.  
     If there are no more values, the method should raise the `StopIteration` exception.  
 Refer to `1.fibonacci.py` for the `objective` version of the fibonacci number generator.    
 To see an example of **composing the iterator into another class** refer to `2.compose.py`  
 
-The iterator protocol can be inconvenient because it brings **the need to sve th state of the iteration between subsequent** `__iter__` **invocations**.  
+The iterator protocol can be inconvenient because it brings **the need to save the state of the iteration between subsequent** `__iter__()` **invocations**.  
 
 - `yield` can be considers a smarter version of the `return` statement with one fundamental difference.   
   A traditional function using `return`:  
@@ -63,7 +63,7 @@ Refer to `3.generator.py` for an example of invoking a generator.
 Also take a look at the examples in `4.gen.examples.py` to see how to use the generator in various invocations.  
 `5.fib.gen.py` shows how to implement the **generator version** of the fibonacci function as compared to the **objective version** in `1.fibonacci.py`  
 
-- List Comprehension Revision  
+**List Comprehension Revision**  
   Basically a method to create lists and their contents in Python.  
   Refer to `6.list.comp.py`  
 
@@ -99,7 +99,7 @@ Also take a look at the examples in `4.gen.examples.py` to see how to use the ge
     - You can use the resulting iterator in a loop or convert it inta a list using the list() function.  
     - Refer to `13.map.py` for an example.  
   
-  - `filter()` - filters its second argument while being guided by directions flowing from the function specified as the first argument (the function is invoked for each list element, just like in `map()`).  
+  - `filter(function, list)` - filters its second argument while being guided by directions flowing from the function specified as the first argument (the function is invoked for each list element, just like in `map()`).  
     - filters out elements based on whether or not the condition is met on the element. `True` - Element stays, `False` - Element removed.  
     - It's more easily explained with an example. Refer to `14.filter.py`    
 
@@ -108,7 +108,7 @@ Also take a look at the examples in `4.gen.examples.py` to see how to use the ge
   - Refer to `15.closure.py` for an example and an explanation.  
   - A closure has to be invoked in exactly the same way in which it has been decalred. (Same amount and type of parameters)  
   - It's possible to declare a closure equipped with an arbitary number of parameters.  
-  - A clsure can also modify it's behaviour by using values taken from outside.  
+  - A closure can also modify it's behaviour by using values taken from outside.  
   - You can create as many closures as you like from one piece of code. Refer to `16.closures.py`  
 
 
@@ -140,7 +140,7 @@ https://edube.org/learn/pe-2/section-summary-105
 
 - **File handles**  
   Python assumes that every file is hidden behind an object of an adequate class.  
-    An object of an adequate class is **created when you open the file and annihilate it at the time of closing**.  
+    An object of an adequate class is **created when you open the file and annihilated at the time of closing**.  
     In general, the object comes from one of these classes `IOBase` <--[`RawIOBase`, `BufferedIOBase`, `TestIOBase`]  
     We will only be dealing with `BufferedIOBase` and `TextIOBase`  
   All the streams are divided into **text** and **binary** streams.  
@@ -156,7 +156,7 @@ https://edube.org/learn/pe-2/section-summary-105
   A function is invoked in the following way: `stream = open(file, mode = 'r', encoding = None)` - encoding as in UTF-8 etc.  
     If the _file_ doesn't exist then a `FileNotFoundError` exception will be raised.  
     `mode` and `encoding` may be omitted as they contain default values.  
-      The default `mode` is `r` or read in text mode, and the default encoded depends on the system being used.  
+      The default `mode` is `r` or read in text mode, and the default for `encoded` depends on the system being used.  
 
 - **Stream Modes**  
 `r` open mode: read  
@@ -179,16 +179,18 @@ https://edube.org/learn/pe-2/section-summary-105
   the stream will be opened in **read and update mode**  
   the file associated with the stream **must exist** and has to be writeable, otherwise the `open()` function raises an exception  
   both read and write operations are allowed for the stream.
+  the stream is set to the beginning of the file
 
 `w+` open mode: write and update  
   the stream will be opened in **write and update mode**  
   the file associated with the stream **doesn't need to exist**; if it doesn't exist, it will be created; the previous content of the file remains untouched  
+  if it exists, it will be truncated to the length of zero (erased)
   both read and write operations are allowed for the stream.  
 
 - **Selecting text and binary modes**  
   If there is a letter `b` at the _end of the mode string_ it means that the stream is to be opened in the binary mode.  
   If the _mode string ends_ with a letter `t` the stream is opened in the text mode.  
-  **NOTE** is the mode is set to `a`, the current file position is set after the last byte of the file. If `a` is **not** set, the current file position is set to before the first byte.  
+  **NOTE** if the mode is set to `a`, the current file position is set after the last byte of the file. If `a` is **not** set, the current file position is set to before the first byte.  
 
 |Text mode|Binary mode|Description|
 |---|---|---|
@@ -253,7 +255,7 @@ Refer to `17.files.py` for a simple example of opening and closing a file.
 
   You can also use `strerror()` from the `os` module to get a descriptive string of the error number that is raised.  
   `strerror()` expects one value, an error code.  
-  If you pass a non-existant error code, then the function will raise a `ValueError` exception.  
+  If you pass a non-existent error code, then the function will raise a `ValueError` exception.  
   Refer to `19.errno.py` (not using `strerror()`) and `20.errno.py` (utilising `strerror()`)  
 
 
@@ -428,7 +430,7 @@ Date and time have countless uses and it's probably hard to find a production ap
 
 - `weekday()` this method will return the day of the week as an integer value (0 to 6). **Monday is 0**.  
   The date class has a similar method called `isoweekday` which also returns the day of the week as an integer but **Monday is 1**!!  
-  Refer to `42.dayofweek.py`  
+  Refer to `42.weekday.py`  
 
 - Creating **time** objects  
   The datetime module also has a class that allows you to represent time.  
@@ -534,7 +536,7 @@ Date and time have countless uses and it's probably hard to find a production ap
     - `days`, `seconds`, `microseconds`, `milliseconds`, `minutes`, `hours` and `weeks`  
     - Each of these default to `0` if they are not specified.  
     - The arguments can be integers or floating point numbers.  
-    - **NOTE** The timedelta object only stores **days, seconds and microseconds**.  
+    - **NOTE** The timedelta object only stores **days, seconds and microseconds**!!  
     - The result of a calulation is days and hours  
     - Weeks are converted to days, hours and minutes to seconds, and milliseconds to microseconds.
     - Refer to `56.timedelta.py`  
@@ -570,7 +572,7 @@ Each day of the week has an integer representation. Refer to the table below:
 For months, it starts from `January` being `1`.  
 There aren't constants that express the month.  
 
-- `calendar()`
+- `calendar()` - This is a **formatted string** of the year you specify.  
   To display the calendar for an entire year, you just invoke `calendar.calendar(2023)` after `import calendar` (The only required parameter is the year)  
   The result displayed is similar to the `cal` command in unix.  
   You can use the following parameters to change the formatting of the calendar:  
@@ -663,4 +665,5 @@ Quiz  - 75% with no revision
         - `filter()` function returns an iterator  
         - `os.mkdir()` returns `FileExistsError` exception if directory exists.  
         92% then 100% on the third attempt, fuzzy around the map and filter functions.  
+
 Test - 

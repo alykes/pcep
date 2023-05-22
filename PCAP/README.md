@@ -136,7 +136,19 @@ Courses that align with this certification:
   - Got up to the final exam.  
 
 18th May 2023 - Thursday  
+  - Doing some revision of Module 4 (reading over notes)
   - Will attempt the final exam: https://edube.org/quiz/pe-2/pe2-module-4-test-1  
   - Continue to do the labs that I skipped over.  
-  
+
+19th May 2023 - Friday  
+  - Start of revision of module 4  
+
+20th May 2023 - Saturday  
+  - Break  
+
+21st May 2023 - Sunday  
+  - Break  
+
+23rd May 2023 - Saturday  
+  - Continuing revision of module 4  
 

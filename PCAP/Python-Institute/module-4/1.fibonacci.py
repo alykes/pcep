@@ -25,6 +25,9 @@ class Fib:
         self.__p1, self.__p2 = self.__p2, ret
         return ret
 
+# fibo = Fib(10)        # This will also work
+# for value in fibo:
+#     print(value)
 
 for i in Fib(10):
     print(i)

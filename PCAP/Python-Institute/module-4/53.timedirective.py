@@ -4,7 +4,7 @@
 import time
 
 timestamp = 1572879180
-st = time.gmtime(timestamp)
+st = time.gmtime(timestamp)                     # This will create atime_struct object
 
 print(time.strftime("%Y/%m/%d %H:%M:%S", st))   # Will format the provided date and time provided by the st variable.
 print(time.strftime("%Y/%m/%d %H:%M:%S"))       # Will use the current date and time as no second argument is provided.

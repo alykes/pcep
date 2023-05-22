@@ -13,9 +13,7 @@ try:
 except IOError as e:
     print("I/O error occurred:", strerror(e.errno))
 
-
-# Reading the binary file.
-data = bytearray(10)
+# This section reads the binary file and prints it out to the stdout
 
 try:
     bf = open('file.bin', 'rb')

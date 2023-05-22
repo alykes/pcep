@@ -14,7 +14,6 @@ except IOError as e:
     print("I/O error occurred:", strerror(e.errno))
 
 # This section reads the binary file and prints it out to the stdout
-from os import strerror
 
 try:
     bf = open('file.bin', 'rb')

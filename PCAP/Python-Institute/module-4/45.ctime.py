@@ -9,6 +9,6 @@ print(time.ctime(timestamp))
 # returns the current timestamp
 print(time.time())
 
-# Converts the current time to a string
+# Converts the current time to a string with the date and time, e.g., 'Mon May 22 01:54:57 2023'
 print(time.ctime())
 

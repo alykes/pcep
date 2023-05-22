@@ -5,7 +5,7 @@ from os import strerror
 try:
     ccnt = lcnt = 0
     s = open('text.txt', 'rt')
-    line = s.readline()
+    line = s.readline()     # If you specify an argument, then it will only read that many bytes from the line
     while line != '':
         lcnt += 1
         for ch in line:
