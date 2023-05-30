@@ -10,8 +10,8 @@ example_object = ExampleClass()
 print(example_object.__dict__)
 
 print(hasattr(example_object, 'b'))     # True
-print(hasattr(example_object, 'a'))     # True      - I got stuck on this one for a bit...At the end of the day, even though inaccessible, it's still an attribute!
-print(hasattr(ExampleClass, 'b'))       # False     
+print(hasattr(example_object, 'a'))     # True      - I got stuck on this one for a bit...At the end of the day, all objects inherit properites from the Class.
+print(hasattr(ExampleClass, 'b'))       # False     - because this only gets instantiated when an object is created.
 print(hasattr(ExampleClass, 'a'))       # True
 
 ExampleClass.a = 5      # 5

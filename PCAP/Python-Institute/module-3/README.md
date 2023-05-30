@@ -293,8 +293,8 @@ https://edube.org/learn/pe-2/section-summary-103
   - If there are two superclasses on the line in a class definition, then inheritance and overriding goes from left to right!  
   - Refer to `44.overriding.py` and `45.overriding.py` for examples on two situation that have conflicting entities.  
 
-- Polymorphism  
-  - This is when the exact same call of an entity behaves in two completely different ways depending on the how the call originated.  
+- **Polymorphism**  
+  - This is when the exact same call of an entity behaves in two completely different ways depending on the where the call originated from.  
   - This can occur when the subclass is able to modify its superclass behaviour.  
   - Refer to `46.poly.py` and `47.poly.py`  
 

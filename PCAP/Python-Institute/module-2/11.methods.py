@@ -112,12 +112,12 @@ print("SiGmA=60".lower())
 # Demonstrating the lstrip() method:
 print("[" + " tau ".lstrip() + "]")
 
-print("www.cisco.com".lstrip("w."))     # returns cisco.com
-print("www.cisco.com".lstrip(".w"))     # Any order works so long as the letters all exist at the beginning of the string
-print("vvv.www.cisco.com".lstrip("w.")) # returns the original string because the letters don't all exist at the start of the string
+print("www.cisco.com".lstrip("w."))         # returns cisco.com
+print("www.cisco.com".lstrip(".w"))         # Any order works so long as the letters all exist at the beginning of the string
+print("vvv.www.cisco.com".lstrip("w."))     # returns the original string because the letters don't all exist at the start of the string
 
-print("vvv.www.cisco.com".lstrip("w.v"))
-print("www.cisco.com".lstrip("w.c"))
+print("vvv.www.cisco.com".lstrip("w.v"))    # returns cisco.com
+print("www.cisco.com".lstrip("w.c"))        # returns isco.com
 
 print("pythoninstitute.org".lstrip(".org")) # returns pythoninstitute.org , because .org (or a combination of those letters doesn't exist at the beggining of the string)
 
@@ -129,7 +129,7 @@ print("Apple juice".replace("juice", ""))
 
 # The third argument limits how many replacements should occur
 print("This is it!".replace("is", "are", 1))
-print("This is it!".replace("is", "are", 2))
+print("This is it, is it? Yes, it is!".replace("is", "are", 3))
 
 
 # Demonstrating the rfind() method:

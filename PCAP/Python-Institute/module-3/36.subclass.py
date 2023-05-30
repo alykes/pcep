@@ -21,3 +21,5 @@ for cls1 in [Vehicle, LandVehicle, TrackedVehicle]:
 # Vehicle	            True	False	    False
 # LandVehicle	        True	True	    False
 # TrackedVehicle	    True	True	    True
+
+

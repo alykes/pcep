@@ -18,6 +18,6 @@ stack_object_1 = Stack()
 stack_object_2 = Stack()
 
 stack_object_1.push(3)
-stack_object_2.push(stack_object_1.pop())
+stack_object_2.push(stack_object_1.pop())   # The number popped from the 1st stack object is pushed onto the 2nd stack object
 
 print(stack_object_2.pop())

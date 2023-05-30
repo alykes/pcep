@@ -9,3 +9,6 @@ class Star:
 
 sun = Star("Sun", "Milky Way")
 print(sun)
+
+# Result
+# Sun in Milky Way

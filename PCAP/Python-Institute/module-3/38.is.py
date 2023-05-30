@@ -7,8 +7,8 @@ class SampleClass:
 
 object_1 = SampleClass(0)
 object_2 = SampleClass(2)
-object_3 = object_1
-object_3.val += 1
+object_3 = object_1             # This copies the reference for object_1 to object_3, essentially, they point to the same object now. 
+object_3.val += 1               # Performing an operation on object_3 also affects object_1 as they are the same object!
 
 print(object_1 is object_2)
 print(object_2 is object_3)

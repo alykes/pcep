@@ -616,7 +616,7 @@ There aren't constants that express the month.
   - Up to but not including the second number.  
   - Refer to `63.leapyear.py`  
 
-- Classes for creating calendars  
+- **Classes for creating calendars**  
   - There are a few clases that the calendar module offers:  
     - `calendar.Calendar` – provides methods to prepare calendar data for formatting  
     - `calendar.TextCalendar` – is used to create regular text calendars  
@@ -624,7 +624,7 @@ There aren't constants that express the month.
     - `calendar.LocalTextCalendar` – is a subclass of the `calendar.TextCalendar` class. The constructor of this class takes the _locale_ parameter, which is used to return the appropriate months and weekday names  
     - `calendar.LocalHTMLCalendar` – is a subclass of the `calendar.HTMLCalendar` class. The constructor of this class takes the _locale_ parameter, which is used to return the appropriate months and weekday names  
 
-- Creating a Calendar object  
+- **Creating a Calendar object**  
   - The `Calendar` class constructor only takes **one optional** parameter named `firstweekday`, default is 0 (Monday)  
   - There is a class method named `iterweekdays` which returns an iterator for week day numbers.  
     - the first value returned is always the value in the `firstweekday` property.  
@@ -666,4 +666,6 @@ Quiz  - 75% with no revision
         - `os.mkdir()` returns `FileExistsError` exception if directory exists.  
         92% then 100% on the third attempt, fuzzy around the map and filter functions.  
 
-Test - 
+Test  - 88% with a tonne of revision of the module 4 content
+        - had an issue with `AND` of integers, basically if there is a `0` operand, the result is `0` else it returns the second operand.  
+        - 100% on second attempt.  

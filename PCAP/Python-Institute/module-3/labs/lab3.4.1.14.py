@@ -1,7 +1,5 @@
 # Works out the permiter for all three points
-
 import math
-
 
 class Point:
     #
@@ -19,6 +17,14 @@ class Point:
         return self.__y
         #
     
+    def distance_from_xy(self, x, y):
+        #
+        x_side = self.__x - x
+        y_side = self.__y - y
+        
+        return math.hypot(x_side, y_side)
+        #
+        
     def distance_from_point(self, point):
         #
         x_side = self.__x - point.getx()
@@ -27,24 +33,7 @@ class Point:
         return math.hypot(x_side, y_side)
         #
 
-
-class Triangle:
-    def __init__(self, vertice1, vertice2, vertice3):
-        #
-        self.vertice1 = vertice1
-        self.vertice2 = vertice2
-        self.vertice3 = vertice3
-        
-        self.point_list = [self.vertice1, self.vertice2, self.vertice3]
-        #
-
-    def perimeter(self):
-        #
-        return self.vertice1.distance_from_point(self.vertice2) + \
-               self.vertice1.distance_from_point(self.vertice3) + \
-               self.vertice3.distance_from_point(self.vertice2)
-        #
-
-
-triangle = Triangle(Point(0, 0), Point(1, 0), Point(0, 1))
-print(triangle.perimeter())
+point1 = Point(0, 0)
+point2 = Point(1, 1)
+print(point1.distance_from_point(point2))
+print(point2.distance_from_xy(2, 0))

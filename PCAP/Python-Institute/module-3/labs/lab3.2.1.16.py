@@ -30,7 +30,7 @@ class SuperQueue(Queue):
         # else:
         #     empty = True
         # return empty
-        return len(self.__queue) == 0
+        return len(self._Queue__queue) == 0
 
 
 que = SuperQueue()

@@ -1,6 +1,7 @@
 # The function named incIntsI() gets an object of any class, 
 # scans its contents in order to find all integer attributes with names starting with i, 
 # and increments them by one.
+# this is a primary example of both: Reflection and Introsepction
 
 class MyClass:
     pass

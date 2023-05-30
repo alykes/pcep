@@ -1,3 +1,6 @@
+# This is an example of compositon. The subclass is treated like a container and passed to the Vehicle Super Class
+# where is picks up the additional properties of the Vehicle class
+# 
 import time
 
 class Tracks:

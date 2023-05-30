@@ -1,4 +1,5 @@
 # Determine whether text input is a palindrone or not
+# A palindrome is a word which look the same when read forward and backward. For example, "kayak" is a palindrome, while "loyal" is not.
 text = input("Please enter a word: ")
 
 string = ""
@@ -9,10 +10,9 @@ for char in text:
     else:
         string += char.upper()
 
-last_index = len(string) -1
+last_index = rindex = len(string) -1
 
 index = 0
-rindex = len(string) - 1
 palindrone = True
 
 while palindrone and index <= last_index:

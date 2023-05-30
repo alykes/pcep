@@ -107,9 +107,14 @@ print(cal)
 
 # Creating Calendar object, think of this as a class to iterate through values
 cal_obj = calendar.Calendar(firstweekday=0) #Create a calendar object with Monday as the first day in the week.
-
 for day in cal_obj.iterweekdays():
     print(day)
-    
+
+print()
+
+cal_obj.setfirstweekday(calendar.SUNDAY)
+for day in cal_obj.iterweekdays():
+    print(day)
+
 for month in cal_obj.itermonthdates(2023, 5):
     print(month)

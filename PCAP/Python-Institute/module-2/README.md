@@ -220,7 +220,9 @@ The exception raised can cross **function** and **module** boundaries.
 - `raise` you can use this keyword to raise an exception, refer to `19.exceptions.py`  
   - this allows you to simulate raising an actual exception  
   - to partially handle an exception and make another part of the code responsible for completing the handling (separation of concerns)  
-  - Note that if you only use the key word `raise`, without an exception type, it can only be used inside an `except:` branch! If used in any other context, it causes an error!  
+  - **Note** that if you only use the key word `raise`, without an exception type, **it can only be used inside an `except:` branch!** If used in any other context, it causes an error!  
+  - This will re-raise the same exception as currently handled.  
+  - This allows you to distribute exception handling among different parts of code.  
 
 - `assert` will evaluate an expression. Refer `20.assert.py`  
   - assert expects, `True`.  

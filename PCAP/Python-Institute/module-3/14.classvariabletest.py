@@ -17,4 +17,4 @@ example_object = ExampleClass(2)
 print(ExampleClass.__dict__)       
 
 print(example_object.__dict__)     
-print(example_object.varia)        # This will print 2, even if varia is assigned 10 because there is an object variable named varia!
+print(example_object.varia)        # This will print 2, even if varia is assigned 10 because this is the object variable named varia! (not the local variable named varia)

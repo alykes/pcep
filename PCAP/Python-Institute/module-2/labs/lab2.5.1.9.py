@@ -5,10 +5,9 @@ except:
     print("The input needs to be numbers only.")
     exit()
 
-while len(dob) > 1:
+while len(str(dob)) > 1:
     sum = 0 
-
-    for char in dob:
+    for char in str(dob):
         sum += int(char)
 
     dob = str(sum)

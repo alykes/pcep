@@ -19,7 +19,7 @@ def printBases(cls):
         print(x.__name__, end=' ')
     print(')')
 
-
+# NOTE A class without a SuperClass will point to the 'object' (This is a predefined Python class)
 printBases(SuperOne)        # object
 printBases(SuperTwo)        # object
 printBases(Sub)             # SuperOne SuperTwo

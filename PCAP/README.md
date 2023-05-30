@@ -136,7 +136,7 @@ Courses that align with this certification:
   - Got up to the final exam.  
 
 18th May 2023 - Thursday  
-  - Doing some revision of Module 4 (reading over notes)
+  - Doing some revision of Module 4 (reading over notes)  
   - Will attempt the final exam: https://edube.org/quiz/pe-2/pe2-module-4-test-1  
   - Continue to do the labs that I skipped over.  
 
@@ -149,6 +149,40 @@ Courses that align with this certification:
 21st May 2023 - Sunday  
   - Break  
 
-23rd May 2023 - Saturday  
+22nd May 2023 - Monday  
   - Continuing revision of module 4  
 
+23rd May 2023 - Tuesday  
+  - More revision of module 4  
+  - Done the Module 4 Quiz + Test  
+  - Revising material again before I sit the final test in the course  
+  - Went through module 1, done the test + Quiz  
+  - Starting on module 2 revision, got up to 2.2.1.3 - will continue from this point tomorrow  
+
+24th May 2023 - Wednesday  
+  - Continue from Module 2.2.1.3  
+  - Got to 2.8.1.1  
+
+25th May 2023 - Thursday  
+  - Didn't have a chance to study today  
+
+26th May 2023 - Friday  
+  - continuing from 2.8.1.1  
+  - Got up to 3.4.1.4  
+
+27th May 2023 - Saturday  
+  - Break  
+
+28th May 2023 - Sunday  
+  - Break  
+
+29th May 2023 - Monday  
+  - Continuing from 3.4.1.4  
+  - Got up to 3.6.1.3  
+
+30th May 2023 - Tuesday  
+  - Completed everything, including the final exam! Got 78% >.<  
+  - Created a PearsonVue account, have to wait 24hrs before I can link it with my Python Institute account.  
+    - Once the accounts are linked, I should have a **MyVoucher** tab show up next to the completed Python Essentials 2 course.  
+    - This will have my 50% discount voucher.  
+  - Next steps is to do even more revision to prepare for the exam.  
